@@ -15,6 +15,12 @@
 # limitations under the License.
 #
 
+# Inherit device path
+$(call inherit-product, device/xiaomi/land/DevicePath.mk)
+
+# Define platform before including any common things
+$(call inherit-product, device/xiaomi/land/PlatformConfig.mk)
+
 # Check for the target product.
 ifeq (pa_land,$(TARGET_PRODUCT))
 
@@ -37,9 +43,7 @@ include vendor/pa/main.mk
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := land
 PRODUCT_NAME := pa_land
-PRODUCT_MODEL := Redmi 3S
 PRODUCT_MANUFACTURER := Xiaomi
-
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 TARGET_VENDOR_PRODUCT_NAME := land
