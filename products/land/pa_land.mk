@@ -28,6 +28,9 @@ TARGET_BOOT_ANIMATION_RES := 720
 # Inherit from our common CAF device tree.
 include device/qcom/common/common.mk
 
+# Inherit device path
+$(call inherit-product, device/xiaomi/land/DevicePath.mk)
+
 # Inherit from land device
 $(call inherit-product, device/xiaomi/land/device.mk)
 
